@@ -46,7 +46,7 @@ export default function Introduction() {
             animate={inView ? 'visible' : 'hidden'}
             custom={2}
           >
-            Rudransh Developers is a trusted name in premium residential construction, 
+            Rudransh Developer & Real-Estate is a trusted name in premium residential construction, 
             delivering thoughtfully designed homes across key locations. Our projects 
             reflect a deep commitment to quality craftsmanship, honest pricing and 
             long-term community value.

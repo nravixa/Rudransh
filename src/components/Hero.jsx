@@ -30,7 +30,7 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
-          aria-label="Rudransh Developers cinematic architectural video background"
+          aria-label="Rudransh Developer & Real-Estate cinematic architectural video background"
         >
           <source src="/hero_sec.mp4" type="video/mp4" />
         </video>
@@ -60,7 +60,7 @@ export default function Hero() {
           transition={{ duration: 1.1, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           RUDRANSH<br />
-          <span className="hero-title-sub">DEVELOPERS</span>
+          <span className="hero-title-sub">DEVELOPER & REAL-ESTATE</span>
         </motion.h1>
 
         <motion.div

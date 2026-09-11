@@ -13,32 +13,58 @@ export default function Navbar() {
 
   useEffect(() => {
     if (menuOpen) {
+      const currentScrollY = window.scrollY
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${currentScrollY}px`
+      document.body.style.width = '100%'
       document.body.style.overflow = 'hidden'
       document.documentElement.style.overflow = 'hidden'
-      document.body.style.touchAction = 'none'
     } else {
+      const savedTop = document.body.style.top
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
       document.body.style.overflow = ''
       document.documentElement.style.overflow = ''
-      document.body.style.touchAction = ''
+      if (savedTop) {
+        const y = parseInt(savedTop, 10) * -1
+        window.scrollTo(0, y)
+      }
     }
 
     return () => {
+      const savedTop = document.body.style.top
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
       document.body.style.overflow = ''
       document.documentElement.style.overflow = ''
-      document.body.style.touchAction = ''
+      if (savedTop) {
+        const y = parseInt(savedTop, 10) * -1
+        window.scrollTo(0, y)
+      }
     }
   }, [menuOpen])
 
   const scrollTo = (id) => {
-    setMenuOpen(false)
-    document.body.style.overflow = ''
-    document.documentElement.style.overflow = ''
-    document.body.style.touchAction = ''
+    if (menuOpen) {
+      const savedTop = document.body.style.top
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+      if (savedTop) {
+        const y = parseInt(savedTop, 10) * -1
+        window.scrollTo(0, y)
+      }
+      setMenuOpen(false)
+    }
     const el = document.getElementById(id)
     if (el) {
       setTimeout(() => {
         el.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
+      }, 60)
     }
   }
 
@@ -51,10 +77,10 @@ export default function Navbar() {
         transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
         <a href="#" className="navbar-logo" onClick={(e) => { e.preventDefault(); scrollTo('overview') }}>
-          <img src="/logo.webp" alt="Rudransh Developers Logo" className="navbar-logo-img" />
+          <img src="/logo.webp" alt="Rudransh Developer & Real-Estate Logo" className="navbar-logo-img" />
           <div className="navbar-brand-text">
             <span className="navbar-brand-name">RUDRANSH</span>
-            <span className="navbar-brand-sub">DEVELOPERS</span>
+            <span className="navbar-brand-sub">DEVELOPER & REAL-ESTATE</span>
           </div>
         </a>
 

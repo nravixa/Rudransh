@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import featuresImg from '../assets/images/architecture/residential-features.webp'
 
 const features = [
   {
@@ -94,7 +95,7 @@ export default function ResidentialFeatures() {
           animate={inView ? 'visible' : 'hidden'}
           custom={1}
         >
-          Why Choose Rudransh Developers
+          Why Choose Rudransh Developer & Real-Estate
         </motion.h2>
       </div>
 
@@ -108,8 +109,8 @@ export default function ResidentialFeatures() {
           transition={{ duration: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <img
-            src="/interior.jpg"
-            alt="Rudransh Developers premium residential architectural vision"
+            src={featuresImg}
+            alt="Rudransh Developer & Real-Estate premium residential architectural vision"
             loading="lazy"
           />
         </motion.div>

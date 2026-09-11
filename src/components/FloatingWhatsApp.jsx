@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function FloatingWhatsApp() {
   const phone = '919011196635'
-  const defaultMessage = encodeURIComponent('Hello Rudransh Developers, I would like to enquire about your property projects.')
+  const defaultMessage = encodeURIComponent('Hello Rudransh Developer & Real-Estate, I would like to enquire about your property projects.')
   const whatsappUrl = `https://wa.me/${phone}?text=${defaultMessage}`
 
   return (
@@ -11,7 +11,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       className="floating-whatsapp"
-      aria-label="Chat with Rudransh Developers on WhatsApp"
+      aria-label="Chat with Rudransh Developer & Real-Estate on WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}

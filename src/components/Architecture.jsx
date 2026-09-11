@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import architectureHero from '../assets/images/architecture/architecture-hero.webp'
 
 export default function Architecture() {
   const ref = useRef(null)
@@ -15,8 +16,8 @@ export default function Architecture() {
     <section ref={ref} className="architecture">
       <motion.div className="architecture-image-wrap" style={{ y: imageY }}>
         <img
-          src="/pool.jpg"
-          alt="Rudransh Developers architectural landscape and open community"
+          src={architectureHero}
+          alt="Rudransh Developer & Real-Estate architectural landscape and open community"
           loading="lazy"
         />
       </motion.div>
@@ -31,7 +32,7 @@ export default function Architecture() {
       >
         <h2>Built with integrity. Conceived for generations.</h2>
         <p>
-          At Rudransh Developers, we believe that true residential value lies in 
+          At Rudransh Developer & Real-Estate, we believe that true residential value lies in 
           structural permanence, harmonious layouts, and honest execution. 
           Every development is thoughtfully integrated with its surroundings, 
           offering families space to grow, connect, and thrive in comfort.

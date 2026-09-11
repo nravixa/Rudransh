@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const details = [
-  { label: 'Developer', value: 'Rudransh Developers' },
+  { label: 'Developer', value: 'Rudransh Developer & Real-Estate' },
   { label: 'Property Type', value: 'Premium Residential' },
   { label: 'Locations', value: '6 Prime Growth Hubs' },
   { label: 'Documentation', value: '100% Clear Titles' },

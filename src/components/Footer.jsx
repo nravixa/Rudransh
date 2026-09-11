@@ -10,9 +10,9 @@ export default function Footer() {
         {/* Column 1: Brand */}
         <div className="footer-col footer-col-brand">
           <div className="footer-brand-header">
-            <img src="/logo.webp" alt="Rudransh Developers Logo" className="footer-logo-img" />
+            <img src="/logo.webp" alt="Rudransh Developer & Real-Estate Logo" className="footer-logo-img" />
             <div className="footer-brand-text">
-              <span className="footer-logo">RUDRANSH DEVELOPERS</span>
+              <span className="footer-logo">RUDRANSH DEVELOPER & REAL-ESTATE</span>
               <span className="footer-tagline">Premium Residential Projects</span>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function Footer() {
           <h4 className="footer-heading">FOLLOW US</h4>
           <div className="footer-social-list">
             <a
-              href="https://www.instagram.com/rudranshdevloper5711?stkn=M2p3cnk5MWZlbGdz"
+              href="https://www.instagram.com/rudranshdevloper5711"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-link"
@@ -71,7 +71,7 @@ export default function Footer() {
               <span>Instagram</span>
             </a>
             <a
-              href="https://www.facebook.com/share/18xKRpWWqG/"
+              href="https://www.facebook.com/people/Pratik-Kshirsagar/pfbid0kQFjDKoy792Aj8qUr9Sbn5wxHWUqPJRRQYAvRjghEbCe4kahNgb3wTy5xTemg2Yl/?rdid=0lNfHGOxjey2vxs4&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19cvKhRT7t%2F"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-link"

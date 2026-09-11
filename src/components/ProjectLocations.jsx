@@ -1,56 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-
-const locations = [
-  {
-    num: '01',
-    name: 'Mald – Gaware Phata',
-    highlight: 'Prime Highway Connectivity',
-    tag: 'Strategic Growth Sector',
-    desc: 'High-connectivity residential zone with smooth road access, expanding infrastructure, and serene surroundings.',
-    image: '/hero.jpg',
-  },
-  {
-    num: '02',
-    name: 'Mald – Gokul Nagar',
-    highlight: 'Peaceful Neighborhood Living',
-    tag: 'Community Living',
-    desc: 'Master-planned residential layout tailored for family life, landscaped surroundings, and everyday convenience.',
-    image: '/interior.jpg',
-  },
-  {
-    num: '03',
-    name: 'Sawal',
-    highlight: 'Scenic & Natural Ambiance',
-    tag: 'Green Living Corridor',
-    desc: 'Open green vistas with pristine air quality and calm residential atmosphere designed for peaceful living.',
-    image: '/pool.jpg',
-  },
-  {
-    num: '04',
-    name: 'Malegaon Budruk (Bk)',
-    highlight: 'Thriving Residential Belt',
-    tag: 'High Investment Value',
-    desc: 'Rapidly growing residential sector with strong civic connectivity, proximity to markets, and quality development.',
-    image: '/hero.jpg',
-  },
-  {
-    num: '05',
-    name: 'Jamdar Road, Kasba',
-    highlight: 'Central Town Convenience',
-    tag: 'Established Hub',
-    desc: 'Central location benefits with seamless access to schools, healthcare, daily necessities, and commercial landmarks.',
-    image: '/interior.jpg',
-  },
-  {
-    num: '06',
-    name: 'Tandulwadi – Airport Road',
-    highlight: 'Airport Corridor Access',
-    tag: 'Aviation & Transit Corridor',
-    desc: 'Flagship location along the high-speed airport transit corridor offering outstanding long-term appreciation.',
-    image: '/pool.jpg',
-  },
-]
+import { projects } from '../data/projects'
 
 export default function ProjectLocations({ onSelectLocation }) {
   const ref = useRef(null)
@@ -93,7 +43,7 @@ export default function ProjectLocations({ onSelectLocation }) {
         <div className="locations-editorial-grid">
           {/* Left Column: Numbered Interactive Location List */}
           <div className="locations-list">
-            {locations.map((loc, idx) => {
+            {projects.map((loc, idx) => {
               const isHovered = hoveredIdx === idx
               return (
                 <motion.div
@@ -138,7 +88,7 @@ export default function ProjectLocations({ onSelectLocation }) {
           {/* Right Column: Dynamic Editorial Preview Card */}
           <div className="locations-preview-col">
             <AnimatePresence mode="wait">
-              {locations[hoveredIdx] && (
+              {projects[hoveredIdx] && (
                 <motion.div
                   key={hoveredIdx}
                   className="location-preview-card"
@@ -149,21 +99,21 @@ export default function ProjectLocations({ onSelectLocation }) {
                 >
                   <div className="preview-image-wrap">
                     <img
-                      src={locations[hoveredIdx].image}
-                      alt={locations[hoveredIdx].name}
+                      src={projects[hoveredIdx].image}
+                      alt={projects[hoveredIdx].alt || projects[hoveredIdx].name}
                       className="preview-image"
                       loading="lazy"
                     />
                     <div className="preview-overlay" />
                     <div className="preview-badge">
-                      <span>{locations[hoveredIdx].num} · RUDRANSH DEVELOPERS</span>
+                      <span>{projects[hoveredIdx].num} · RUDRANSH DEVELOPER & REAL-ESTATE</span>
                     </div>
                   </div>
 
                   <div className="preview-content">
-                    <div className="preview-tag">{locations[hoveredIdx].tag}</div>
-                    <h4 className="preview-title">{locations[hoveredIdx].name}</h4>
-                    <p className="preview-desc">{locations[hoveredIdx].desc}</p>
+                    <div className="preview-tag">{projects[hoveredIdx].tag}</div>
+                    <h4 className="preview-title">{projects[hoveredIdx].name}</h4>
+                    <p className="preview-desc">{projects[hoveredIdx].desc}</p>
 
                     <div className="preview-actions">
                       <a
@@ -171,7 +121,7 @@ export default function ProjectLocations({ onSelectLocation }) {
                         className="preview-enquire-btn"
                         onClick={(e) => {
                           if (onSelectLocation) {
-                            onSelectLocation(locations[hoveredIdx].name)
+                            onSelectLocation(projects[hoveredIdx].name)
                           }
                         }}
                       >
