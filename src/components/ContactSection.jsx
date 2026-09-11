@@ -61,23 +61,28 @@ export default function ContactSection({ selectedLocation }) {
 
     // Build the required WhatsApp message format
     const lines = [
-      'Hello Rudransh Developer & Real-Estate,',
-      'I would like to enquire about your property projects.',
+      'Hello Rudransh Developers,',
+      '',
+      'I am interested in your residential projects and would like to know more.',
       '',
       `Name: ${formData.name.trim()}`,
       `Phone: ${formData.phone.trim()}`,
-      `Email: ${formData.email.trim() || 'Not specified'}`,
+      `Email: ${formData.email.trim() || 'N/A'}`,
       `Preferred Project / Location: ${formData.location}`,
       `Message: ${formData.message.trim() || 'Interested in project details, pricing, and scheduling a site visit.'}`,
       '',
       'Please contact me regarding the project.',
+      '',
       'Thank you.',
     ]
 
     const fullMessage = lines.join('\n')
     const encodedText = encodeURIComponent(fullMessage)
-    // WhatsApp international format: 91 + 9011196635
-    const whatsappUrl = `https://wa.me/919011196635?text=${encodedText}`
+    // WhatsApp international format: 919792927799
+    const isMobile = typeof navigator !== 'undefined' && /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    const whatsappUrl = isMobile
+      ? `https://api.whatsapp.com/send?phone=919792927799&text=${encodedText}`
+      : `https://web.whatsapp.com/send?phone=919792927799&text=${encodedText}`
 
     setSubmittedWhatsAppUrl(whatsappUrl)
 
@@ -85,7 +90,7 @@ export default function ContactSection({ selectedLocation }) {
     setTimeout(() => {
       window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
       setIsSubmitting(false)
-    }, 600)
+    }, 400)
   }
 
   const handleReset = () => {

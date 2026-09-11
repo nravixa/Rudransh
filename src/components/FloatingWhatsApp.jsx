@@ -1,9 +1,23 @@
 import { motion } from 'framer-motion'
 
 export default function FloatingWhatsApp() {
-  const phone = '919011196635'
-  const defaultMessage = encodeURIComponent('Hello Rudransh Developer & Real-Estate, I would like to enquire about your property projects.')
-  const whatsappUrl = `https://wa.me/${phone}?text=${defaultMessage}`
+  const phone = '919792927799'
+  const message = [
+    'Hello Rudransh Developers,',
+    '',
+    'I would like to know more about your residential projects.',
+    '',
+    'Please share the available project details and locations.',
+    '',
+    'Thank you.',
+  ].join('\n')
+
+  const encodedMessage = encodeURIComponent(message)
+  // Open WhatsApp Web on desktop, WhatsApp app on mobile devices
+  const isMobile = typeof navigator !== 'undefined' && /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  const whatsappUrl = isMobile
+    ? `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`
+    : `https://web.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`
 
   return (
     <motion.a
@@ -11,7 +25,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       className="floating-whatsapp"
-      aria-label="Chat with Rudransh Developer & Real-Estate on WhatsApp"
+      aria-label="Chat with Rudransh Developers on WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}

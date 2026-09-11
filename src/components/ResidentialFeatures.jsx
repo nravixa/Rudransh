@@ -95,22 +95,21 @@ export default function ResidentialFeatures() {
           animate={inView ? 'visible' : 'hidden'}
           custom={1}
         >
-          Why Choose Rudransh Developer & Real-Estate
+          Why Choose Rudransh Developers & Real-Estate
         </motion.h2>
       </div>
 
       <div className="experience-inner">
-        {/* Image */}
+        {/* Image - Fully responsive and guaranteed visible on desktop, tablet, and mobile */}
         <motion.div
-          ref={imgRef}
           className="experience-image"
-          initial={{ opacity: 0, clipPath: 'inset(100% 0 0 0)' }}
-          animate={imgInView ? { opacity: 1, clipPath: 'inset(0% 0 0 0)' } : {}}
-          transition={{ duration: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <img
             src={featuresImg}
-            alt="Rudransh Developer & Real-Estate premium residential architectural vision"
+            alt="Why Choose Rudransh Developers & Real-Estate"
             loading="lazy"
           />
         </motion.div>

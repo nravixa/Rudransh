@@ -50,7 +50,6 @@ export default function ProjectLocations({ onSelectLocation }) {
                   key={loc.num}
                   className={`location-item ${isHovered ? 'active' : ''}`}
                   onMouseEnter={() => setHoveredIdx(idx)}
-                  onClick={() => onSelectLocation && onSelectLocation(loc.name)}
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{
@@ -62,17 +61,42 @@ export default function ProjectLocations({ onSelectLocation }) {
                   <div className="location-item-top">
                     <span className="location-num">{loc.num}</span>
                     <div className="location-main-info">
-                      <h3 className="location-name">{loc.name}</h3>
+                      <a
+                        href={loc.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="location-name-link"
+                        title={`Open ${loc.name} on Google Maps`}
+                        onClick={(e) => {
+                          // Allow navigation to Google Maps in new tab
+                          setHoveredIdx(idx)
+                        }}
+                      >
+                        <h3 className="location-name">{loc.name}</h3>
+                      </a>
                       <div className="location-meta-line">
                         <span className="location-highlight">{loc.highlight}</span>
                         <span className="location-tag">{loc.tag}</span>
                       </div>
                     </div>
-                    <div className="location-arrow">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="7" y1="17" x2="17" y2="7" />
-                        <polyline points="7 7 17 7 17 17" />
-                      </svg>
+
+                    <div className="location-item-actions">
+                      <a
+                        href={loc.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="location-map-cta"
+                        title={`View ${loc.name} on Google Maps`}
+                        aria-label={`View ${loc.name} on Google Maps`}
+                      >
+                        <span className="location-cta-text">View Location</span>
+                        <div className="location-arrow">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                            <circle cx="12" cy="9" r="2.5" />
+                          </svg>
+                        </div>
+                      </a>
                     </div>
                   </div>
 
@@ -97,7 +121,15 @@ export default function ProjectLocations({ onSelectLocation }) {
                   exit={{ opacity: 0, scale: 0.96, y: -15 }}
                   transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
-                  <div className="preview-image-wrap">
+                  {/* Clicking the project image opens Google Maps */}
+                  <a
+                    href={projects[hoveredIdx].mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="preview-image-wrap"
+                    title={`Click to view ${projects[hoveredIdx].name} on Google Maps`}
+                    aria-label={`View ${projects[hoveredIdx].name} location on Google Maps`}
+                  >
                     <img
                       src={projects[hoveredIdx].image}
                       alt={projects[hoveredIdx].alt || projects[hoveredIdx].name}
@@ -108,14 +140,47 @@ export default function ProjectLocations({ onSelectLocation }) {
                     <div className="preview-badge">
                       <span>{projects[hoveredIdx].num} · RUDRANSH DEVELOPER & REAL-ESTATE</span>
                     </div>
-                  </div>
+                    <div className="preview-map-hint">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                        <circle cx="12" cy="9" r="2.5" />
+                      </svg>
+                      <span>Open in Google Maps</span>
+                    </div>
+                  </a>
 
                   <div className="preview-content">
                     <div className="preview-tag">{projects[hoveredIdx].tag}</div>
-                    <h4 className="preview-title">{projects[hoveredIdx].name}</h4>
+                    
+                    {/* Clicking the project name opens Google Maps */}
+                    <a
+                      href={projects[hoveredIdx].mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="preview-title-link"
+                      title={`Open ${projects[hoveredIdx].name} on Google Maps`}
+                    >
+                      <h4 className="preview-title">{projects[hoveredIdx].name}</h4>
+                    </a>
+
                     <p className="preview-desc">{projects[hoveredIdx].desc}</p>
 
                     <div className="preview-actions">
+                      {/* Clicking View Location opens Google Maps */}
+                      <a
+                        href={projects[hoveredIdx].mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="preview-map-btn"
+                        aria-label={`View ${projects[hoveredIdx].name} on Google Maps`}
+                      >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                          <circle cx="12" cy="9" r="2.5" />
+                        </svg>
+                        <span>View Location</span>
+                      </a>
+
                       <a
                         href="#contact"
                         className="preview-enquire-btn"
@@ -125,7 +190,7 @@ export default function ProjectLocations({ onSelectLocation }) {
                           }
                         }}
                       >
-                        <span>Enquire for this Location</span>
+                        <span>Enquire Now</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                           <line x1="5" y1="12" x2="19" y2="12" />
                           <polyline points="12 5 19 12 12 19" />

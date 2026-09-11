@@ -19,6 +19,7 @@ export const projects = [
     desc: 'High-connectivity residential zone with smooth road access, expanding infrastructure, and serene surroundings.',
     image: project1,
     alt: 'Rudransh Developer & Real-Estate — Mald Gaware Phata Project',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Mald+Gaware+Phata',
   },
   {
     num: '02',
@@ -29,6 +30,7 @@ export const projects = [
     desc: 'Master-planned residential layout tailored for family life, landscaped surroundings, and everyday convenience.',
     image: project2,
     alt: 'Rudransh Developer & Real-Estate — Mald Gokul Nagar Project',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Mald+Gokul+Nagar',
   },
   {
     num: '03',
@@ -39,6 +41,7 @@ export const projects = [
     desc: 'Open green vistas with pristine air quality and calm residential atmosphere designed for peaceful living.',
     image: project3,
     alt: 'Rudransh Developer & Real-Estate — Sawal Project',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Sawal+Maharashtra',
   },
   {
     num: '04',
@@ -49,6 +52,7 @@ export const projects = [
     desc: 'Rapidly growing residential sector with strong civic connectivity, proximity to markets, and quality development.',
     image: project4,
     alt: 'Rudransh Developer & Real-Estate — Malegaon Budruk (Bk) Project',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Malegaon+Budruk+Bk+Maharashtra',
   },
   {
     num: '05',
@@ -59,6 +63,7 @@ export const projects = [
     desc: 'Central location benefits with seamless access to schools, healthcare, daily necessities, and commercial landmarks.',
     image: project5,
     alt: 'Rudransh Developer & Real-Estate — Jamdar Road Kasba Project',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Jamdar+Road+Kasba+Maharashtra',
   },
   {
     num: '06',
@@ -69,6 +74,7 @@ export const projects = [
     desc: 'Flagship location along the high-speed airport transit corridor offering outstanding long-term appreciation.',
     image: project6,
     alt: 'Rudransh Developer & Real-Estate — Tandulwadi Airport Road Project',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Tandulwadi+Airport+Road+Maharashtra',
   },
 ]
 
