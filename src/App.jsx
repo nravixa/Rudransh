@@ -11,6 +11,7 @@ import PropertyDetails from './components/PropertyDetails'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
+import ProjectPopup from './components/ProjectPopup'
 
 export default function App() {
   const [selectedLocation, setSelectedLocation] = useState('Mald – Gaware Phata')
@@ -39,6 +40,7 @@ export default function App() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <ProjectPopup />
     </div>
   )
 }

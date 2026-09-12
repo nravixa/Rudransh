@@ -3059,3 +3059,293 @@ button {
     font-size: 0.88rem;
   }
 }
+
+/* =====================================================
+   ONGOING PROJECT POPUP — Tandulwadi – Airport Road
+   ===================================================== */
+.project-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-popup-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 530px;
+  width: 100%;
+  max-height: calc(100vh - 2.5rem);
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(181, 147, 101, 0.25);
+  border: 1px solid rgba(181, 147, 101, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 10001;
+  margin: auto;
+}
+
+.project-popup-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 20;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(163, 148, 131, 0.25);
+  color: var(--charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.project-popup-close:hover {
+  background: #ffffff;
+  color: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.project-popup-close:active {
+  transform: scale(0.95);
+}
+
+.project-popup-media {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  min-height: 180px;
+  overflow: hidden;
+  background: #171512;
+  border-radius: 15px 15px 0 0;
+  flex-shrink: 0;
+}
+
+.project-popup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-popup-badge-overlay {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(23, 21, 18, 0.88);
+  color: #e5cdad;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  border-radius: 30px;
+  border: 1px solid rgba(216, 190, 152, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.project-popup-badge-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  animation: popupPulse 1.8s infinite;
+}
+
+@keyframes popupPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.project-popup-body {
+  padding: 24px 26px 26px;
+  background: #ffffff;
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-popup-subheading {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.project-popup-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.18;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.project-popup-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--charcoal-mid);
+  background: var(--ivory);
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(163, 148, 131, 0.2);
+  align-self: flex-start;
+}
+
+.location-pin {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.project-popup-desc {
+  font-size: 0.92rem;
+  line-height: 1.58;
+  color: var(--charcoal-light);
+  margin: 2px 0 6px;
+}
+
+.project-popup-ctas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.popup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-align: center;
+  min-height: 46px;
+  box-sizing: border-box;
+}
+
+.popup-btn-outline {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1.5px solid var(--charcoal-mid);
+}
+
+.popup-btn-outline:hover {
+  background: var(--charcoal);
+  color: #ffffff;
+  border-color: var(--charcoal);
+  box-shadow: 0 4px 14px rgba(23, 21, 18, 0.18);
+  transform: translateY(-1px);
+}
+
+.popup-btn-primary {
+  background: #25d366;
+  color: #ffffff;
+  border: 1.5px solid #25d366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+}
+
+.popup-btn-primary:hover {
+  background: #20ba59;
+  border-color: #20ba59;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+  transform: translateY(-1px);
+}
+
+.popup-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile & Small Screen Optimizations */
+@media (max-width: 540px) {
+  .project-popup-overlay {
+    padding: 0.75rem;
+  }
+
+  .project-popup-card {
+    max-height: calc(100vh - 1.5rem);
+    border-radius: 14px;
+  }
+
+  .project-popup-media {
+    height: 175px;
+    min-height: 160px;
+    border-radius: 13px 13px 0 0;
+  }
+
+  .project-popup-body {
+    padding: 18px 16px 20px;
+    gap: 10px;
+  }
+
+  .project-popup-title {
+    font-size: 1.5rem;
+  }
+
+  .project-popup-location {
+    font-size: 0.85rem;
+    padding: 5px 11px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project-popup-desc {
+    font-size: 0.86rem;
+    line-height: 1.52;
+  }
+
+  .project-popup-ctas {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .popup-btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 0.84rem;
+  }
+}
