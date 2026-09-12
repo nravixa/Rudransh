@@ -74,7 +74,7 @@ export const projects = [
     desc: 'Flagship location along the high-speed airport transit corridor offering outstanding long-term appreciation.',
     image: project6,
     alt: 'Rudransh Developer & Real-Estate — Tandulwadi Airport Road Project',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Tandulwadi+Airport+Road+Maharashtra',
+    mapUrl: 'https://maps.app.goo.gl/66Bsb43YDSn9jbiQ7',
   },
 ]
 

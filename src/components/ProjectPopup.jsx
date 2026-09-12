@@ -91,8 +91,7 @@ export default function ProjectPopup() {
     : `https://web.whatsapp.com/send?phone=${whatsappPhone}&text=${encodedMessage}`
 
   // Existing Google Maps URL for Tandulwadi Airport Road
-  const mapUrl =
-    'https://www.google.com/maps/search/?api=1&query=Tandulwadi+Airport+Road+Maharashtra'
+  const mapUrl = 'https://maps.app.goo.gl/66Bsb43YDSn9jbiQ7'
 
   return (
     <AnimatePresence>
