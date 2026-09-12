@@ -3066,7 +3066,7 @@ button {
 .project-popup-overlay {
   position: fixed;
   inset: 0;
-  z-index: 10000;
+  z-index: 100000;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -3077,6 +3077,7 @@ button {
   box-sizing: border-box;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  pointer-events: auto;
 }
 
 .project-popup-card {
@@ -3086,20 +3087,31 @@ button {
   max-width: 530px;
   width: 100%;
   max-height: calc(100vh - 2.5rem);
-  overflow-y: auto;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(181, 147, 101, 0.25);
   border: 1px solid rgba(181, 147, 101, 0.2);
   display: flex;
   flex-direction: column;
-  z-index: 10001;
+  z-index: 100001;
   margin: auto;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.project-popup-scrollable {
+  width: 100%;
+  max-height: calc(100vh - 2.5rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
 }
 
 .project-popup-close {
   position: absolute;
   top: 14px;
   right: 14px;
-  z-index: 20;
+  z-index: 9999;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -3112,10 +3124,27 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  pointer-events: auto !important;
+  touch-action: manipulation;
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Expanded hit target for touch screens without changing visual geometry */
+.project-popup-close::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  border-radius: 50%;
+}
+
+.project-popup-close svg {
+  pointer-events: none;
 }
 
 .project-popup-close:hover {
@@ -3307,8 +3336,18 @@ button {
   }
 
   .project-popup-card {
-    max-height: calc(100vh - 1.5rem);
+    max-height: calc(100dvh - 1.5rem);
     border-radius: 14px;
+  }
+
+  .project-popup-scrollable {
+    max-height: calc(100dvh - 1.5rem);
+    border-radius: 14px;
+  }
+
+  .project-popup-close {
+    top: 12px;
+    right: 12px;
   }
 
   .project-popup-media {
